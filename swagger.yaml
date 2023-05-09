@@ -1,1 +1,2492 @@
+openapi: 3.0.3
+info:
+  title: crAPI
+  version: 1.0.0
+  contact: {}
+servers:
+- url: http://localhost
+paths:
+  /identity/api/auth/signup:
+    post:
+      tags:
+      - localhost
+      summary: /identity/api/auth/signup
+      description: /identity/api/auth/signup
+      operationId: identityApiAuthSignup
+      parameters:
+      - name: host
+        in: header
+        schema:
+          type: string
+          example: localhost:8888
+      - name: user-agent
+        in: header
+        schema:
+          type: string
+          example: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101
+            Firefox/112.0
+      - name: accept-language
+        in: header
+        schema:
+          type: string
+          example: en-US,en;q=0.5
+      - name: accept-encoding
+        in: header
+        schema:
+          type: string
+          example: gzip, deflate, br
+      - name: referer
+        in: header
+        schema:
+          type: string
+          example: http://localhost:8888/signup
+      - name: content-length
+        in: header
+        schema:
+          type: string
+          example: '88'
+      - name: origin
+        in: header
+        schema:
+          type: string
+          example: http://localhost:8888
+      - name: connection
+        in: header
+        schema:
+          type: string
+          example: keep-alive
+      - name: sec-fetch-dest
+        in: header
+        schema:
+          type: string
+          example: empty
+      - name: sec-fetch-mode
+        in: header
+        schema:
+          type: string
+          example: cors
+      - name: sec-fetch-site
+        in: header
+        schema:
+          type: string
+          example: same-origin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: userD@example.com
+                name:
+                  type: string
+                  example: userD
+                number:
+                  type: string
+                  example: 098765123
+                password:
+                  type: string
+                  example: Test@2024
+            example:
+              email: userD@example.com
+              name: userD
+              number: 098765123
+              password: Test@2024
+      responses:
+        '200':
+          description: http://localhost:8888/identity/api/auth/signup
+          headers:
+            access-control-allow-origin:
+              schema:
+                type: string
+                example: '*'
+            cache-control:
+              schema:
+                type: string
+                example: no-cache, no-store, max-age=0, must-revalidate
+            connection:
+              schema:
+                type: string
+                example: close
+            date:
+              schema:
+                type: string
+                example: Mon, 01 May 2023 15:03:45 GMT
+            expires:
+              schema:
+                type: string
+                example: '0'
+            pragma:
+              schema:
+                type: string
+                example: no-cache
+            server:
+              schema:
+                type: string
+                example: openresty/1.17.8.2
+            transfer-encoding:
+              schema:
+                type: string
+                example: chunked
+            vary:
+              schema:
+                type: string
+                example: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+            x-content-type-options:
+              schema:
+                type: string
+                example: nosniff
+            x-frame-options:
+              schema:
+                type: string
+                example: DENY
+            x-xss-protection:
+              schema:
+                type: string
+                example: 1; mode=block
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: User registered successfully! Please Login.
+                  status:
+                    type: number
+                    example: 200
+              examples:
+                http://localhost:8888/identity/api/auth/signup:
+                  value:
+                    message: User registered successfully! Please Login.
+                    status: 200
+  /identity/api/v2/user/dashboard:
+    get:
+      tags:
+      - localhost
+      summary: /identity/api/v2/user/dashboard
+      description: /identity/api/v2/user/dashboard
+      operationId: identityApiV2UserDashboard
+      parameters:
+      - name: host
+        in: header
+        schema:
+          type: string
+          example: localhost:8888
+      - name: user-agent
+        in: header
+        schema:
+          type: string
+          example: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101
+            Firefox/112.0
+      - name: accept-language
+        in: header
+        schema:
+          type: string
+          example: en-US,en;q=0.5
+      - name: accept-encoding
+        in: header
+        schema:
+          type: string
+          example: gzip, deflate, br
+      - name: referer
+        in: header
+        schema:
+          type: string
+          example: http://localhost:8888/login
+      - name: connection
+        in: header
+        schema:
+          type: string
+          example: keep-alive
+      - name: sec-fetch-dest
+        in: header
+        schema:
+          type: string
+          example: empty
+      - name: sec-fetch-mode
+        in: header
+        schema:
+          type: string
+          example: cors
+      - name: sec-fetch-site
+        in: header
+        schema:
+          type: string
+          example: same-origin
+      responses:
+        '200':
+          description: http://localhost:8888/identity/api/v2/user/dashboard
+          headers:
+            cache-control:
+              schema:
+                type: string
+                example: no-cache, no-store, max-age=0, must-revalidate
+            connection:
+              schema:
+                type: string
+                example: close
+            date:
+              schema:
+                type: string
+                example: Mon, 01 May 2023 15:04:04 GMT
+            expires:
+              schema:
+                type: string
+                example: '0'
+            pragma:
+              schema:
+                type: string
+                example: no-cache
+            server:
+              schema:
+                type: string
+                example: openresty/1.17.8.2
+            transfer-encoding:
+              schema:
+                type: string
+                example: chunked
+            vary:
+              schema:
+                type: string
+                example: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+            x-content-type-options:
+              schema:
+                type: string
+                example: nosniff
+            x-frame-options:
+              schema:
+                type: string
+                example: DENY
+            x-xss-protection:
+              schema:
+                type: string
+                example: 1; mode=block
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  available_credit:
+                    type: number
+                    example: 100
+                  email:
+                    type: string
+                    example: userD@example.com
+                  id:
+                    type: number
+                    example: 13
+                  name:
+                    type: string
+                    example: userD
+                  number:
+                    type: string
+                    example: 098765123
+                  picture_url:
+                    nullable: true
+                    example: null
+                  role:
+                    type: string
+                    example: ROLE_USER
+                  video_id:
+                    type: number
+                    example: 0
+                  video_name:
+                    nullable: true
+                    example: null
+                  video_url:
+                    nullable: true
+                    example: null
+              examples:
+                http://localhost:8888/identity/api/v2/user/dashboard:
+                  value:
+                    available_credit: 100
+                    email: userD@example.com
+                    id: 13
+                    name: userD
+                    number: 098765123
+                    picture_url: null
+                    role: ROLE_USER
+                    video_id: 0
+                    video_name: null
+                    video_url: null
+  /identity/api/v2/vehicle/vehicles:
+    get:
+      tags:
+      - localhost
+      summary: /identity/api/v2/vehicle/vehicles
+      description: /identity/api/v2/vehicle/vehicles
+      operationId: identityApiV2VehicleVehicles
+      parameters:
+      - name: host
+        in: header
+        schema:
+          type: string
+          example: localhost:8888
+      - name: user-agent
+        in: header
+        schema:
+          type: string
+          example: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101
+            Firefox/112.0
+      - name: accept-language
+        in: header
+        schema:
+          type: string
+          example: en-US,en;q=0.5
+      - name: accept-encoding
+        in: header
+        schema:
+          type: string
+          example: gzip, deflate, br
+      - name: referer
+        in: header
+        schema:
+          type: string
+          example: http://localhost:8888/dashboard
+      - name: connection
+        in: header
+        schema:
+          type: string
+          example: keep-alive
+      - name: sec-fetch-dest
+        in: header
+        schema:
+          type: string
+          example: empty
+      - name: sec-fetch-mode
+        in: header
+        schema:
+          type: string
+          example: cors
+      - name: sec-fetch-site
+        in: header
+        schema:
+          type: string
+          example: same-origin
+      responses:
+        '200':
+          description: http://localhost:8888/identity/api/v2/vehicle/vehicles
+          headers:
+            cache-control:
+              schema:
+                type: string
+                example: no-cache, no-store, max-age=0, must-revalidate
+            connection:
+              schema:
+                type: string
+                example: close
+            date:
+              schema:
+                type: string
+                example: Mon, 01 May 2023 15:04:04 GMT
+            expires:
+              schema:
+                type: string
+                example: '0'
+            pragma:
+              schema:
+                type: string
+                example: no-cache
+            server:
+              schema:
+                type: string
+                example: openresty/1.17.8.2
+            transfer-encoding:
+              schema:
+                type: string
+                example: chunked
+            vary:
+              schema:
+                type: string
+                example: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+            x-content-type-options:
+              schema:
+                type: string
+                example: nosniff
+            x-frame-options:
+              schema:
+                type: string
+                example: DENY
+            x-xss-protection:
+              schema:
+                type: string
+                example: 1; mode=block
+          content:
+            application/json:
+              schema:
+                type: array
+                items: {}
+                example: []
+              examples:
+                http://localhost:8888/identity/api/v2/vehicle/vehicles:
+                  value: []
+  /identity/api/v2/vehicle/resend_email:
+    post:
+      tags:
+      - localhost
+      summary: /identity/api/v2/vehicle/resend_email
+      description: /identity/api/v2/vehicle/resend_email
+      operationId: identityApiV2VehicleResendEmail
+      parameters:
+      - name: host
+        in: header
+        schema:
+          type: string
+          example: localhost:8888
+      - name: user-agent
+        in: header
+        schema:
+          type: string
+          example: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101
+            Firefox/112.0
+      - name: accept-language
+        in: header
+        schema:
+          type: string
+          example: en-US,en;q=0.5
+      - name: accept-encoding
+        in: header
+        schema:
+          type: string
+          example: gzip, deflate, br
+      - name: referer
+        in: header
+        schema:
+          type: string
+          example: http://localhost:8888/dashboard
+      - name: origin
+        in: header
+        schema:
+          type: string
+          example: http://localhost:8888
+      - name: connection
+        in: header
+        schema:
+          type: string
+          example: keep-alive
+      - name: sec-fetch-dest
+        in: header
+        schema:
+          type: string
+          example: empty
+      - name: sec-fetch-mode
+        in: header
+        schema:
+          type: string
+          example: cors
+      - name: sec-fetch-site
+        in: header
+        schema:
+          type: string
+          example: same-origin
+      - name: content-length
+        in: header
+        schema:
+          type: string
+          example: '0'
+      responses:
+        '200':
+          description: http://localhost:8888/identity/api/v2/vehicle/resend_email
+          headers:
+            access-control-allow-origin:
+              schema:
+                type: string
+                example: '*'
+            cache-control:
+              schema:
+                type: string
+                example: no-cache, no-store, max-age=0, must-revalidate
+            connection:
+              schema:
+                type: string
+                example: close
+            date:
+              schema:
+                type: string
+                example: Mon, 01 May 2023 15:04:06 GMT
+            expires:
+              schema:
+                type: string
+                example: '0'
+            pragma:
+              schema:
+                type: string
+                example: no-cache
+            server:
+              schema:
+                type: string
+                example: openresty/1.17.8.2
+            transfer-encoding:
+              schema:
+                type: string
+                example: chunked
+            vary:
+              schema:
+                type: string
+                example: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+            x-content-type-options:
+              schema:
+                type: string
+                example: nosniff
+            x-frame-options:
+              schema:
+                type: string
+                example: DENY
+            x-xss-protection:
+              schema:
+                type: string
+                example: 1; mode=block
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: 'Your newly purchased Vehicle Details have been sent
+                      to you email address. If you have used example.com email, check
+                      your email using the MailHog web portal. '
+                  status:
+                    type: number
+                    example: 200
+              examples:
+                http://localhost:8888/identity/api/v2/vehicle/resend_email:
+                  value:
+                    message: 'Your newly purchased Vehicle Details have been sent
+                      to you email address. If you have used example.com email, check
+                      your email using the MailHog web portal. '
+                    status: 200
+  /workshop/api/shop/products:
+    get:
+      tags:
+      - localhost
+      summary: /workshop/api/shop/products
+      description: /workshop/api/shop/products
+      operationId: workshopApiShopProducts
+      parameters:
+      - name: host
+        in: header
+        schema:
+          type: string
+          example: localhost:8888
+      - name: user-agent
+        in: header
+        schema:
+          type: string
+          example: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101
+            Firefox/112.0
+      - name: accept-language
+        in: header
+        schema:
+          type: string
+          example: en-US,en;q=0.5
+      - name: accept-encoding
+        in: header
+        schema:
+          type: string
+          example: gzip, deflate, br
+      - name: referer
+        in: header
+        schema:
+          type: string
+          example: http://localhost:8888/shop
+      - name: connection
+        in: header
+        schema:
+          type: string
+          example: keep-alive
+      - name: sec-fetch-dest
+        in: header
+        schema:
+          type: string
+          example: empty
+      - name: sec-fetch-mode
+        in: header
+        schema:
+          type: string
+          example: cors
+      - name: sec-fetch-site
+        in: header
+        schema:
+          type: string
+          example: same-origin
+      responses:
+        '200':
+          description: http://localhost:8888/workshop/api/shop/products
+          headers:
+            allow:
+              schema:
+                type: string
+                example: GET, POST, HEAD, OPTIONS
+            connection:
+              schema:
+                type: string
+                example: close
+            date:
+              schema:
+                type: string
+                example: Mon, 01 May 2023 15:04:19 GMT
+            server:
+              schema:
+                type: string
+                example: openresty/1.17.8.2
+            transfer-encoding:
+              schema:
+                type: string
+                example: chunked
+            vary:
+              schema:
+                type: string
+                example: Origin, Cookie
+            x-frame-options:
+              schema:
+                type: string
+                example: SAMEORIGIN
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  credit:
+                    type: number
+                    example: 90
+                  products:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                          example: 1
+                        image_url:
+                          type: string
+                          example: images/seat.svg
+                        name:
+                          type: string
+                          example: Seat
+                        price:
+                          type: string
+                          example: '10.00'
+                    example:
+                    - id: 1
+                      image_url: images/seat.svg
+                      name: Seat
+                      price: '10.00'
+                    - id: 2
+                      image_url: images/wheel.svg
+                      name: Wheel
+                      price: '10.00'
+              examples:
+                http://localhost:8888/workshop/api/shop/products:
+                  value:
+                    credit: 90
+                    products:
+                    - id: 1
+                      image_url: images/seat.svg
+                      name: Seat
+                      price: '10.00'
+                    - id: 2
+                      image_url: images/wheel.svg
+                      name: Wheel
+                      price: '10.00'
+  /workshop/api/shop/orders:
+    post:
+      tags:
+      - localhost
+      summary: /workshop/api/shop/orders
+      description: /workshop/api/shop/orders
+      operationId: workshopApiShopOrders
+      parameters:
+      - name: host
+        in: header
+        schema:
+          type: string
+          example: localhost:8888
+      - name: user-agent
+        in: header
+        schema:
+          type: string
+          example: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101
+            Firefox/112.0
+      - name: accept-language
+        in: header
+        schema:
+          type: string
+          example: en-US,en;q=0.5
+      - name: accept-encoding
+        in: header
+        schema:
+          type: string
+          example: gzip, deflate, br
+      - name: referer
+        in: header
+        schema:
+          type: string
+          example: http://localhost:8888/shop
+      - name: content-length
+        in: header
+        schema:
+          type: string
+          example: '29'
+      - name: origin
+        in: header
+        schema:
+          type: string
+          example: http://localhost:8888
+      - name: connection
+        in: header
+        schema:
+          type: string
+          example: keep-alive
+      - name: sec-fetch-dest
+        in: header
+        schema:
+          type: string
+          example: empty
+      - name: sec-fetch-mode
+        in: header
+        schema:
+          type: string
+          example: cors
+      - name: sec-fetch-site
+        in: header
+        schema:
+          type: string
+          example: same-origin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                product_id:
+                  type: number
+                  example: 1
+                quantity:
+                  type: number
+                  example: 1
+            example:
+              product_id: 1
+              quantity: 1
+      responses:
+        '200':
+          description: http://localhost:8888/workshop/api/shop/orders
+          headers:
+            access-control-allow-origin:
+              schema:
+                type: string
+                example: '*'
+            allow:
+              schema:
+                type: string
+                example: GET, POST, PUT, HEAD, OPTIONS
+            connection:
+              schema:
+                type: string
+                example: close
+            date:
+              schema:
+                type: string
+                example: Mon, 01 May 2023 15:04:09 GMT
+            server:
+              schema:
+                type: string
+                example: openresty/1.17.8.2
+            transfer-encoding:
+              schema:
+                type: string
+                example: chunked
+            vary:
+              schema:
+                type: string
+                example: Origin, Cookie
+            x-frame-options:
+              schema:
+                type: string
+                example: SAMEORIGIN
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  credit:
+                    type: number
+                    example: 90
+                  id:
+                    type: number
+                    example: 5
+                  message:
+                    type: string
+                    example: Order sent successfully.
+              examples:
+                http://localhost:8888/workshop/api/shop/orders:
+                  value:
+                    credit: 90
+                    id: 5
+                    message: Order sent successfully.
+  /workshop/api/shop/orders/all:
+    get:
+      tags:
+      - localhost
+      summary: /workshop/api/shop/orders/all
+      description: /workshop/api/shop/orders/all
+      operationId: workshopApiShopOrdersAll
+      parameters:
+      - name: host
+        in: header
+        schema:
+          type: string
+          example: localhost:8888
+      - name: user-agent
+        in: header
+        schema:
+          type: string
+          example: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101
+            Firefox/112.0
+      - name: accept-language
+        in: header
+        schema:
+          type: string
+          example: en-US,en;q=0.5
+      - name: accept-encoding
+        in: header
+        schema:
+          type: string
+          example: gzip, deflate, br
+      - name: referer
+        in: header
+        schema:
+          type: string
+          example: http://localhost:8888/past-orders
+      - name: connection
+        in: header
+        schema:
+          type: string
+          example: keep-alive
+      - name: sec-fetch-dest
+        in: header
+        schema:
+          type: string
+          example: empty
+      - name: sec-fetch-mode
+        in: header
+        schema:
+          type: string
+          example: cors
+      - name: sec-fetch-site
+        in: header
+        schema:
+          type: string
+          example: same-origin
+      responses:
+        '200':
+          description: http://localhost:8888/workshop/api/shop/orders/all
+          headers:
+            allow:
+              schema:
+                type: string
+                example: GET, HEAD, OPTIONS
+            connection:
+              schema:
+                type: string
+                example: close
+            date:
+              schema:
+                type: string
+                example: Mon, 01 May 2023 15:04:15 GMT
+            server:
+              schema:
+                type: string
+                example: openresty/1.17.8.2
+            transfer-encoding:
+              schema:
+                type: string
+                example: chunked
+            vary:
+              schema:
+                type: string
+                example: Origin, Cookie
+            x-frame-options:
+              schema:
+                type: string
+                example: SAMEORIGIN
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  orders:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        created_on:
+                          type: string
+                          example: 2023-05-01T15:04:09.798131
+                        id:
+                          type: number
+                          example: 5
+                        product:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                              example: 1
+                            image_url:
+                              type: string
+                              example: images/seat.svg
+                            name:
+                              type: string
+                              example: Seat
+                            price:
+                              type: string
+                              example: '10.00'
+                        quantity:
+                          type: number
+                          example: 1
+                        status:
+                          type: string
+                          example: delivered
+                        transaction_id:
+                          type: string
+                          example: 57b94daa-f157-4492-a5ca-ebefc3b3159a
+                        user:
+                          type: object
+                          properties:
+                            email:
+                              type: string
+                              example: userD@example.com
+                            number:
+                              type: string
+                              example: 098765123
+                    example:
+                    - created_on: 2023-05-01T15:04:09.798131
+                      id: 5
+                      product:
+                        id: 1
+                        image_url: images/seat.svg
+                        name: Seat
+                        price: '10.00'
+                      quantity: 1
+                      status: delivered
+                      transaction_id: 57b94daa-f157-4492-a5ca-ebefc3b3159a
+                      user:
+                        email: userD@example.com
+                        number: 098765123
+              examples:
+                http://localhost:8888/workshop/api/shop/orders/all:
+                  value:
+                    orders:
+                    - created_on: 2023-05-01T15:04:09.798131
+                      id: 5
+                      product:
+                        id: 1
+                        image_url: images/seat.svg
+                        name: Seat
+                        price: '10.00'
+                      quantity: 1
+                      status: delivered
+                      transaction_id: 57b94daa-f157-4492-a5ca-ebefc3b3159a
+                      user:
+                        email: userD@example.com
+                        number: 098765123
+  /workshop/api/shop/orders/5:
+    get:
+      tags:
+      - localhost
+      summary: /workshop/api/shop/orders/5
+      description: /workshop/api/shop/orders/5
+      operationId: workshopApiShopOrders5
+      parameters:
+      - name: host
+        in: header
+        schema:
+          type: string
+          example: localhost:8888
+      - name: user-agent
+        in: header
+        schema:
+          type: string
+          example: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101
+            Firefox/112.0
+      - name: accept-language
+        in: header
+        schema:
+          type: string
+          example: en-US,en;q=0.5
+      - name: accept-encoding
+        in: header
+        schema:
+          type: string
+          example: gzip, deflate, br
+      - name: referer
+        in: header
+        schema:
+          type: string
+          example: http://localhost:8888/orders?order_id=5
+      - name: connection
+        in: header
+        schema:
+          type: string
+          example: keep-alive
+      - name: sec-fetch-dest
+        in: header
+        schema:
+          type: string
+          example: empty
+      - name: sec-fetch-mode
+        in: header
+        schema:
+          type: string
+          example: cors
+      - name: sec-fetch-site
+        in: header
+        schema:
+          type: string
+          example: same-origin
+      responses:
+        '200':
+          description: http://localhost:8888/workshop/api/shop/orders/5
+          headers:
+            allow:
+              schema:
+                type: string
+                example: GET, POST, PUT, HEAD, OPTIONS
+            connection:
+              schema:
+                type: string
+                example: close
+            date:
+              schema:
+                type: string
+                example: Mon, 01 May 2023 15:04:14 GMT
+            server:
+              schema:
+                type: string
+                example: openresty/1.17.8.2
+            transfer-encoding:
+              schema:
+                type: string
+                example: chunked
+            vary:
+              schema:
+                type: string
+                example: Origin, Cookie
+            x-frame-options:
+              schema:
+                type: string
+                example: SAMEORIGIN
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  order:
+                    type: object
+                    properties:
+                      created_on:
+                        type: string
+                        example: 2023-05-01T15:04:09.798131
+                      id:
+                        type: number
+                        example: 5
+                      product:
+                        type: object
+                        properties:
+                          id:
+                            type: number
+                            example: 1
+                          image_url:
+                            type: string
+                            example: images/seat.svg
+                          name:
+                            type: string
+                            example: Seat
+                          price:
+                            type: string
+                            example: '10.00'
+                      quantity:
+                        type: number
+                        example: 1
+                      status:
+                        type: string
+                        example: delivered
+                      transaction_id:
+                        type: string
+                        example: 57b94daa-f157-4492-a5ca-ebefc3b3159a
+                      user:
+                        type: object
+                        properties:
+                          email:
+                            type: string
+                            example: userD@example.com
+                          number:
+                            type: string
+                            example: 098765123
+                  payment:
+                    type: object
+                    properties:
+                      amount:
+                        type: number
+                        example: 10
+                      card_expiry:
+                        type: string
+                        example: 09/2026
+                      card_number:
+                        type: string
+                        example: XXXXXXXXXXXX8320
+                      card_owner_name:
+                        type: string
+                        example: userD
+                      card_type:
+                        type: string
+                        example: Visa Retired
+                      currency:
+                        type: string
+                        example: USD
+                      order_id:
+                        type: number
+                        example: 5
+                      paid_on:
+                        type: string
+                        example: 2023-05-01T15:04:09.798131
+                      transaction_id:
+                        type: string
+                        example: 57b94daa-f157-4492-a5ca-ebefc3b3159a
+              examples:
+                http://localhost:8888/workshop/api/shop/orders/5:
+                  value:
+                    order:
+                      created_on: 2023-05-01T15:04:09.798131
+                      id: 5
+                      product:
+                        id: 1
+                        image_url: images/seat.svg
+                        name: Seat
+                        price: '10.00'
+                      quantity: 1
+                      status: delivered
+                      transaction_id: 57b94daa-f157-4492-a5ca-ebefc3b3159a
+                      user:
+                        email: userD@example.com
+                        number: 098765123
+                    payment:
+                      amount: 10
+                      card_expiry: 09/2026
+                      card_number: XXXXXXXXXXXX8320
+                      card_owner_name: userD
+                      card_type: Visa Retired
+                      currency: USD
+                      order_id: 5
+                      paid_on: 2023-05-01T15:04:09.798131
+                      transaction_id: 57b94daa-f157-4492-a5ca-ebefc3b3159a
+  /workshop/api/shop/orders/return_order:
+    post:
+      tags:
+      - localhost
+      summary: /workshop/api/shop/orders/return_order
+      description: /workshop/api/shop/orders/return_order
+      operationId: workshopApiShopOrdersReturnOrder
+      parameters:
+      - name: order_id
+        in: query
+        schema:
+          type: string
+          example: '5'
+      - name: host
+        in: header
+        schema:
+          type: string
+          example: localhost:8888
+      - name: user-agent
+        in: header
+        schema:
+          type: string
+          example: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101
+            Firefox/112.0
+      - name: accept-language
+        in: header
+        schema:
+          type: string
+          example: en-US,en;q=0.5
+      - name: accept-encoding
+        in: header
+        schema:
+          type: string
+          example: gzip, deflate, br
+      - name: referer
+        in: header
+        schema:
+          type: string
+          example: http://localhost:8888/past-orders
+      - name: origin
+        in: header
+        schema:
+          type: string
+          example: http://localhost:8888
+      - name: connection
+        in: header
+        schema:
+          type: string
+          example: keep-alive
+      - name: sec-fetch-dest
+        in: header
+        schema:
+          type: string
+          example: empty
+      - name: sec-fetch-mode
+        in: header
+        schema:
+          type: string
+          example: cors
+      - name: sec-fetch-site
+        in: header
+        schema:
+          type: string
+          example: same-origin
+      - name: content-length
+        in: header
+        schema:
+          type: string
+          example: '0'
+      responses:
+        '200':
+          description: http://localhost:8888/workshop/api/shop/orders/return_order?order_id=5
+          headers:
+            access-control-allow-origin:
+              schema:
+                type: string
+                example: '*'
+            allow:
+              schema:
+                type: string
+                example: POST, OPTIONS
+            connection:
+              schema:
+                type: string
+                example: close
+            date:
+              schema:
+                type: string
+                example: Mon, 01 May 2023 15:04:15 GMT
+            server:
+              schema:
+                type: string
+                example: openresty/1.17.8.2
+            transfer-encoding:
+              schema:
+                type: string
+                example: chunked
+            vary:
+              schema:
+                type: string
+                example: Origin, Cookie
+            x-frame-options:
+              schema:
+                type: string
+                example: SAMEORIGIN
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Please use the following QR code to return your order
+                      to a UPS store!
+                  order:
+                    type: object
+                    properties:
+                      created_on:
+                        type: string
+                        example: 2023-05-01T15:04:09.798131
+                      id:
+                        type: number
+                        example: 5
+                      product:
+                        type: object
+                        properties:
+                          id:
+                            type: number
+                            example: 1
+                          image_url:
+                            type: string
+                            example: images/seat.svg
+                          name:
+                            type: string
+                            example: Seat
+                          price:
+                            type: string
+                            example: '10.00'
+                      quantity:
+                        type: number
+                        example: 1
+                      status:
+                        type: string
+                        example: return pending
+                      transaction_id:
+                        type: string
+                        example: 57b94daa-f157-4492-a5ca-ebefc3b3159a
+                      user:
+                        type: object
+                        properties:
+                          email:
+                            type: string
+                            example: userD@example.com
+                          number:
+                            type: string
+                            example: 098765123
+                  qr_code_url:
+                    type: string
+                    example: http://localhost:8888/workshop/api/shop/return_qr_code
+              examples:
+                http://localhost:8888/workshop/api/shop/orders/return_order?order_id=5:
+                  value:
+                    message: Please use the following QR code to return your order
+                      to a UPS store!
+                    order:
+                      created_on: 2023-05-01T15:04:09.798131
+                      id: 5
+                      product:
+                        id: 1
+                        image_url: images/seat.svg
+                        name: Seat
+                        price: '10.00'
+                      quantity: 1
+                      status: return pending
+                      transaction_id: 57b94daa-f157-4492-a5ca-ebefc3b3159a
+                      user:
+                        email: userD@example.com
+                        number: 098765123
+                    qr_code_url: http://localhost:8888/workshop/api/shop/return_qr_code
+  /community/api/v2/coupon/validate-coupon:
+    post:
+      tags:
+      - localhost
+      summary: /community/api/v2/coupon/validate-coupon
+      description: /community/api/v2/coupon/validate-coupon
+      operationId: communityApiV2CouponValidateCoupon
+      parameters:
+      - name: host
+        in: header
+        schema:
+          type: string
+          example: localhost:8888
+      - name: user-agent
+        in: header
+        schema:
+          type: string
+          example: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101
+            Firefox/112.0
+      - name: accept-language
+        in: header
+        schema:
+          type: string
+          example: en-US,en;q=0.5
+      - name: accept-encoding
+        in: header
+        schema:
+          type: string
+          example: gzip, deflate, br
+      - name: referer
+        in: header
+        schema:
+          type: string
+          example: http://localhost:8888/shop
+      - name: content-length
+        in: header
+        schema:
+          type: string
+          example: '22'
+      - name: origin
+        in: header
+        schema:
+          type: string
+          example: http://localhost:8888
+      - name: connection
+        in: header
+        schema:
+          type: string
+          example: keep-alive
+      - name: sec-fetch-dest
+        in: header
+        schema:
+          type: string
+          example: empty
+      - name: sec-fetch-mode
+        in: header
+        schema:
+          type: string
+          example: cors
+      - name: sec-fetch-site
+        in: header
+        schema:
+          type: string
+          example: same-origin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                coupon_code:
+                  type: string
+                  example: TEST
+            example:
+              coupon_code: TEST
+      responses:
+        '200':
+          description: ''
+        '500':
+          description: http://localhost:8888/community/api/v2/coupon/validate-coupon
+          headers:
+            access-control-allow-headers:
+              schema:
+                type: string
+                example: Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token,
+                  Authorization
+            access-control-allow-methods:
+              schema:
+                type: string
+                example: POST, GET, OPTIONS, PUT, DELETE
+            access-control-allow-origin:
+              schema:
+                type: string
+                example: '*'
+            connection:
+              schema:
+                type: string
+                example: close
+            date:
+              schema:
+                type: string
+                example: Mon, 01 May 2023 15:04:24 GMT
+            server:
+              schema:
+                type: string
+                example: openresty/1.17.8.2
+            transfer-encoding:
+              schema:
+                type: string
+                example: chunked
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              examples:
+                http://localhost:8888/community/api/v2/coupon/validate-coupon:
+                  value: {}
+  /community/api/v2/community/posts/recent:
+    get:
+      tags:
+      - localhost
+      summary: /community/api/v2/community/posts/recent
+      description: /community/api/v2/community/posts/recent
+      operationId: communityApiV2CommunityPostsRecent
+      parameters:
+      - name: host
+        in: header
+        schema:
+          type: string
+          example: localhost:8888
+      - name: user-agent
+        in: header
+        schema:
+          type: string
+          example: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101
+            Firefox/112.0
+      - name: accept-language
+        in: header
+        schema:
+          type: string
+          example: en-US,en;q=0.5
+      - name: accept-encoding
+        in: header
+        schema:
+          type: string
+          example: gzip, deflate, br
+      - name: referer
+        in: header
+        schema:
+          type: string
+          example: http://localhost:8888/forum
+      - name: connection
+        in: header
+        schema:
+          type: string
+          example: keep-alive
+      - name: sec-fetch-dest
+        in: header
+        schema:
+          type: string
+          example: empty
+      - name: sec-fetch-mode
+        in: header
+        schema:
+          type: string
+          example: cors
+      - name: sec-fetch-site
+        in: header
+        schema:
+          type: string
+          example: same-origin
+      responses:
+        '200':
+          description: http://localhost:8888/community/api/v2/community/posts/recent
+          headers:
+            access-control-allow-headers:
+              schema:
+                type: string
+                example: Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token,
+                  Authorization
+            access-control-allow-methods:
+              schema:
+                type: string
+                example: POST, GET, OPTIONS, PUT, DELETE
+            access-control-allow-origin:
+              schema:
+                type: string
+                example: '*'
+            connection:
+              schema:
+                type: string
+                example: close
+            date:
+              schema:
+                type: string
+                example: Mon, 01 May 2023 15:04:36 GMT
+            server:
+              schema:
+                type: string
+                example: openresty/1.17.8.2
+            transfer-encoding:
+              schema:
+                type: string
+                example: chunked
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    CreatedAt:
+                      type: string
+                      example: 2023-05-01T15:04:33.915Z
+                    author:
+                      type: object
+                      properties:
+                        created_at:
+                          type: string
+                          example: 2023-05-01T15:04:33.915Z
+                        email:
+                          type: string
+                          example: userD@example.com
+                        nickname:
+                          type: string
+                          example: userD
+                        profile_pic_url:
+                          type: string
+                          example: ''
+                        vehicleid:
+                          type: string
+                          example: ''
+                    authorid:
+                      type: number
+                      example: 13
+                    comments:
+                      type: array
+                      items: {}
+                      example: []
+                    content:
+                      type: string
+                      example: comment
+                    id:
+                      type: string
+                      example: 8XEApUEbECDvsrnExVDiSR
+                    title:
+                      type: string
+                      example: comment
+                example:
+                - CreatedAt: 2023-05-01T15:04:33.915Z
+                  author:
+                    created_at: 2023-05-01T15:04:33.915Z
+                    email: userD@example.com
+                    nickname: userD
+                    profile_pic_url: ''
+                    vehicleid: ''
+                  authorid: 13
+                  comments: []
+                  content: comment
+                  id: 8XEApUEbECDvsrnExVDiSR
+                  title: comment
+                - CreatedAt: 2023-05-01T14:58:27.638Z
+                  author:
+                    created_at: 2023-05-01T14:58:27.638Z
+                    email: userC@example.com
+                    nickname: userC
+                    profile_pic_url: ''
+                    vehicleid: ''
+                  authorid: 12
+                  comments:
+                  - CreatedAt: 2023-05-01T14:58:35.656Z
+                    author:
+                      created_at: 2023-05-01T14:58:35.656Z
+                      email: userC@example.com
+                      nickname: userC
+                      profile_pic_url: ''
+                      vehicleid: ''
+                    content: test
+                    id: ''
+                  content: test
+                  id: FWNbxFVgfBugZYrSxdjJnT
+                  title: test
+                - CreatedAt: 2023-05-01T11:40:52.924Z
+                  author:
+                    created_at: 2023-05-01T11:40:52.924Z
+                    email: abdimoha@example.com
+                    nickname: Abdi Mohamed
+                    profile_pic_url: ''
+                    vehicleid: ab84750e-7cb0-4e68-ba4e-ff7ad7154df4
+                  authorid: 8
+                  comments: []
+                  content: t
+                  id: poDfpdaTG2NhptZwYXytmD
+                  title: t
+                - CreatedAt: 2023-05-01T10:57:33.391Z
+                  author:
+                    created_at: 2023-05-01T10:57:33.391Z
+                    email: abdimoha@example.com
+                    nickname: Abdi Mohamed
+                    profile_pic_url: ''
+                    vehicleid: ab84750e-7cb0-4e68-ba4e-ff7ad7154df4
+                  authorid: 8
+                  comments: []
+                  content: test
+                  id: Ws4gPSEAUPpF3PvnYh6zmB
+                  title: test
+                - CreatedAt: 2023-04-26T19:46:32.928Z
+                  author:
+                    created_at: 2023-04-26T19:46:32.928Z
+                    email: robot001@example.com
+                    nickname: Robot
+                    profile_pic_url: ''
+                    vehicleid: dd7c891d-2801-4df4-8641-c12225b2709c
+                  authorid: 3
+                  comments:
+                  - CreatedAt: 2023-05-01T10:57:41.657Z
+                    author:
+                      created_at: 2023-05-01T10:57:41.657Z
+                      email: abdimoha@example.com
+                      nickname: Abdi Mohamed
+                      profile_pic_url: ''
+                      vehicleid: ab84750e-7cb0-4e68-ba4e-ff7ad7154df4
+                    content: test
+                    id: ''
+                  content: Hello world 3
+                  id: QsQRXFGvsDv9g8AwfZoLtG
+                  title: Title 3
+                - CreatedAt: 2023-04-26T19:46:32.927Z
+                  author:
+                    created_at: 2023-04-26T19:46:32.927Z
+                    email: pogba006@example.com
+                    nickname: Pogba
+                    profile_pic_url: ''
+                    vehicleid: 13fa3f50-e694-4b12-89d5-f7ddda14d401
+                  authorid: 2
+                  comments: []
+                  content: Hello world 2
+                  id: xUbFJVcRdHq5MFTJQgvvqd
+                  title: Title 2
+                - CreatedAt: 2023-04-26T19:46:32.859Z
+                  author:
+                    created_at: 2023-04-26T19:46:32.859Z
+                    email: adam007@example.com
+                    nickname: Adam
+                    profile_pic_url: ''
+                    vehicleid: baba7e37-0841-4c4d-ac9a-328e8aa00913
+                  authorid: 1
+                  comments: []
+                  content: Hello world 1
+                  id: 6VnwAgti4oEsifHr3TXCKC
+                  title: Title 1
+              examples:
+                http://localhost:8888/community/api/v2/community/posts/recent:
+                  value:
+                  - CreatedAt: 2023-05-01T15:04:33.915Z
+                    author:
+                      created_at: 2023-05-01T15:04:33.915Z
+                      email: userD@example.com
+                      nickname: userD
+                      profile_pic_url: ''
+                      vehicleid: ''
+                    authorid: 13
+                    comments: []
+                    content: comment
+                    id: 8XEApUEbECDvsrnExVDiSR
+                    title: comment
+                  - CreatedAt: 2023-05-01T14:58:27.638Z
+                    author:
+                      created_at: 2023-05-01T14:58:27.638Z
+                      email: userC@example.com
+                      nickname: userC
+                      profile_pic_url: ''
+                      vehicleid: ''
+                    authorid: 12
+                    comments:
+                    - CreatedAt: 2023-05-01T14:58:35.656Z
+                      author:
+                        created_at: 2023-05-01T14:58:35.656Z
+                        email: userC@example.com
+                        nickname: userC
+                        profile_pic_url: ''
+                        vehicleid: ''
+                      content: test
+                      id: ''
+                    content: test
+                    id: FWNbxFVgfBugZYrSxdjJnT
+                    title: test
+                  - CreatedAt: 2023-05-01T11:40:52.924Z
+                    author:
+                      created_at: 2023-05-01T11:40:52.924Z
+                      email: abdimoha@example.com
+                      nickname: Abdi Mohamed
+                      profile_pic_url: ''
+                      vehicleid: ab84750e-7cb0-4e68-ba4e-ff7ad7154df4
+                    authorid: 8
+                    comments: []
+                    content: t
+                    id: poDfpdaTG2NhptZwYXytmD
+                    title: t
+                  - CreatedAt: 2023-05-01T10:57:33.391Z
+                    author:
+                      created_at: 2023-05-01T10:57:33.391Z
+                      email: abdimoha@example.com
+                      nickname: Abdi Mohamed
+                      profile_pic_url: ''
+                      vehicleid: ab84750e-7cb0-4e68-ba4e-ff7ad7154df4
+                    authorid: 8
+                    comments: []
+                    content: test
+                    id: Ws4gPSEAUPpF3PvnYh6zmB
+                    title: test
+                  - CreatedAt: 2023-04-26T19:46:32.928Z
+                    author:
+                      created_at: 2023-04-26T19:46:32.928Z
+                      email: robot001@example.com
+                      nickname: Robot
+                      profile_pic_url: ''
+                      vehicleid: dd7c891d-2801-4df4-8641-c12225b2709c
+                    authorid: 3
+                    comments:
+                    - CreatedAt: 2023-05-01T10:57:41.657Z
+                      author:
+                        created_at: 2023-05-01T10:57:41.657Z
+                        email: abdimoha@example.com
+                        nickname: Abdi Mohamed
+                        profile_pic_url: ''
+                        vehicleid: ab84750e-7cb0-4e68-ba4e-ff7ad7154df4
+                      content: test
+                      id: ''
+                    content: Hello world 3
+                    id: QsQRXFGvsDv9g8AwfZoLtG
+                    title: Title 3
+                  - CreatedAt: 2023-04-26T19:46:32.927Z
+                    author:
+                      created_at: 2023-04-26T19:46:32.927Z
+                      email: pogba006@example.com
+                      nickname: Pogba
+                      profile_pic_url: ''
+                      vehicleid: 13fa3f50-e694-4b12-89d5-f7ddda14d401
+                    authorid: 2
+                    comments: []
+                    content: Hello world 2
+                    id: xUbFJVcRdHq5MFTJQgvvqd
+                    title: Title 2
+                  - CreatedAt: 2023-04-26T19:46:32.859Z
+                    author:
+                      created_at: 2023-04-26T19:46:32.859Z
+                      email: adam007@example.com
+                      nickname: Adam
+                      profile_pic_url: ''
+                      vehicleid: baba7e37-0841-4c4d-ac9a-328e8aa00913
+                    authorid: 1
+                    comments: []
+                    content: Hello world 1
+                    id: 6VnwAgti4oEsifHr3TXCKC
+                    title: Title 1
+  /community/api/v2/community/posts:
+    post:
+      tags:
+      - localhost
+      summary: /community/api/v2/community/posts
+      description: /community/api/v2/community/posts
+      operationId: communityApiV2CommunityPosts
+      parameters:
+      - name: host
+        in: header
+        schema:
+          type: string
+          example: localhost:8888
+      - name: user-agent
+        in: header
+        schema:
+          type: string
+          example: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101
+            Firefox/112.0
+      - name: accept-language
+        in: header
+        schema:
+          type: string
+          example: en-US,en;q=0.5
+      - name: accept-encoding
+        in: header
+        schema:
+          type: string
+          example: gzip, deflate, br
+      - name: referer
+        in: header
+        schema:
+          type: string
+          example: http://localhost:8888/new-post
+      - name: content-length
+        in: header
+        schema:
+          type: string
+          example: '39'
+      - name: origin
+        in: header
+        schema:
+          type: string
+          example: http://localhost:8888
+      - name: connection
+        in: header
+        schema:
+          type: string
+          example: keep-alive
+      - name: sec-fetch-dest
+        in: header
+        schema:
+          type: string
+          example: empty
+      - name: sec-fetch-mode
+        in: header
+        schema:
+          type: string
+          example: cors
+      - name: sec-fetch-site
+        in: header
+        schema:
+          type: string
+          example: same-origin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                content:
+                  type: string
+                  example: comment
+                title:
+                  type: string
+                  example: comment
+            example:
+              content: comment
+              title: comment
+      responses:
+        '200':
+          description: http://localhost:8888/community/api/v2/community/posts
+          headers:
+            access-control-allow-headers:
+              schema:
+                type: string
+                example: Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token,
+                  Authorization
+            access-control-allow-methods:
+              schema:
+                type: string
+                example: POST, GET, OPTIONS, PUT, DELETE
+            access-control-allow-origin:
+              schema:
+                type: string
+                example: '*'
+            connection:
+              schema:
+                type: string
+                example: close
+            date:
+              schema:
+                type: string
+                example: Mon, 01 May 2023 15:04:33 GMT
+            server:
+              schema:
+                type: string
+                example: openresty/1.17.8.2
+            transfer-encoding:
+              schema:
+                type: string
+                example: chunked
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  CreatedAt:
+                    type: string
+                    example: 2023-05-01T15:04:33.915419751Z
+                  author:
+                    type: object
+                    properties:
+                      created_at:
+                        type: string
+                        example: 2023-05-01T15:04:33.915419626Z
+                      email:
+                        type: string
+                        example: userD@example.com
+                      nickname:
+                        type: string
+                        example: userD
+                      profile_pic_url:
+                        type: string
+                        example: ''
+                      vehicleid:
+                        type: string
+                        example: ''
+                  authorid:
+                    type: number
+                    example: 13
+                  comments:
+                    type: array
+                    items: {}
+                    example: []
+                  content:
+                    type: string
+                    example: comment
+                  id:
+                    type: string
+                    example: 8XEApUEbECDvsrnExVDiSR
+                  title:
+                    type: string
+                    example: comment
+              examples:
+                http://localhost:8888/community/api/v2/community/posts:
+                  value:
+                    CreatedAt: 2023-05-01T15:04:33.915419751Z
+                    author:
+                      created_at: 2023-05-01T15:04:33.915419626Z
+                      email: userD@example.com
+                      nickname: userD
+                      profile_pic_url: ''
+                      vehicleid: ''
+                    authorid: 13
+                    comments: []
+                    content: comment
+                    id: 8XEApUEbECDvsrnExVDiSR
+                    title: comment
+  /community/api/v2/community/posts/8XEApUEbECDvsrnExVDiSR:
+    get:
+      tags:
+      - localhost
+      summary: /community/api/v2/community/posts/8XEApUEbECDvsrnExVDiSR
+      description: /community/api/v2/community/posts/8XEApUEbECDvsrnExVDiSR
+      operationId: communityApiV2CommunityPosts8xeapuebecdvsrnexvdisr
+      parameters:
+      - name: host
+        in: header
+        schema:
+          type: string
+          example: localhost:8888
+      - name: user-agent
+        in: header
+        schema:
+          type: string
+          example: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101
+            Firefox/112.0
+      - name: accept-language
+        in: header
+        schema:
+          type: string
+          example: en-US,en;q=0.5
+      - name: accept-encoding
+        in: header
+        schema:
+          type: string
+          example: gzip, deflate, br
+      - name: referer
+        in: header
+        schema:
+          type: string
+          example: http://localhost:8888/post?post_id=8XEApUEbECDvsrnExVDiSR
+      - name: connection
+        in: header
+        schema:
+          type: string
+          example: keep-alive
+      - name: sec-fetch-dest
+        in: header
+        schema:
+          type: string
+          example: empty
+      - name: sec-fetch-mode
+        in: header
+        schema:
+          type: string
+          example: cors
+      - name: sec-fetch-site
+        in: header
+        schema:
+          type: string
+          example: same-origin
+      responses:
+        '200':
+          description: http://localhost:8888/community/api/v2/community/posts/8XEApUEbECDvsrnExVDiSR
+          headers:
+            access-control-allow-headers:
+              schema:
+                type: string
+                example: Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token,
+                  Authorization
+            access-control-allow-methods:
+              schema:
+                type: string
+                example: POST, GET, OPTIONS, PUT, DELETE
+            access-control-allow-origin:
+              schema:
+                type: string
+                example: '*'
+            connection:
+              schema:
+                type: string
+                example: close
+            date:
+              schema:
+                type: string
+                example: Mon, 01 May 2023 15:04:36 GMT
+            server:
+              schema:
+                type: string
+                example: openresty/1.17.8.2
+            transfer-encoding:
+              schema:
+                type: string
+                example: chunked
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  CreatedAt:
+                    type: string
+                    example: 2023-05-01T15:04:33.915Z
+                  author:
+                    type: object
+                    properties:
+                      created_at:
+                        type: string
+                        example: 2023-05-01T15:04:33.915Z
+                      email:
+                        type: string
+                        example: userD@example.com
+                      nickname:
+                        type: string
+                        example: userD
+                      profile_pic_url:
+                        type: string
+                        example: ''
+                      vehicleid:
+                        type: string
+                        example: ''
+                  authorid:
+                    type: number
+                    example: 13
+                  comments:
+                    type: array
+                    items: {}
+                    example: []
+                  content:
+                    type: string
+                    example: comment
+                  id:
+                    type: string
+                    example: 8XEApUEbECDvsrnExVDiSR
+                  title:
+                    type: string
+                    example: comment
+              examples:
+                http://localhost:8888/community/api/v2/community/posts/8XEApUEbECDvsrnExVDiSR:
+                  value:
+                    CreatedAt: 2023-05-01T15:04:33.915Z
+                    author:
+                      created_at: 2023-05-01T15:04:33.915Z
+                      email: userD@example.com
+                      nickname: userD
+                      profile_pic_url: ''
+                      vehicleid: ''
+                    authorid: 13
+                    comments: []
+                    content: comment
+                    id: 8XEApUEbECDvsrnExVDiSR
+                    title: comment
+  /community/api/v2/community/posts/8XEApUEbECDvsrnExVDiSR/comment:
+    post:
+      tags:
+      - localhost
+      summary: /community/api/v2/community/posts/8XEApUEbECDvsrnExVDiSR/comment
+      description: /community/api/v2/community/posts/8XEApUEbECDvsrnExVDiSR/comment
+      operationId: communityApiV2CommunityPosts8xeapuebecdvsrnexvdisrComment
+      parameters:
+      - name: host
+        in: header
+        schema:
+          type: string
+          example: localhost:8888
+      - name: user-agent
+        in: header
+        schema:
+          type: string
+          example: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101
+            Firefox/112.0
+      - name: accept-language
+        in: header
+        schema:
+          type: string
+          example: en-US,en;q=0.5
+      - name: accept-encoding
+        in: header
+        schema:
+          type: string
+          example: gzip, deflate, br
+      - name: referer
+        in: header
+        schema:
+          type: string
+          example: http://localhost:8888/post?post_id=8XEApUEbECDvsrnExVDiSR
+      - name: content-length
+        in: header
+        schema:
+          type: string
+          example: '18'
+      - name: origin
+        in: header
+        schema:
+          type: string
+          example: http://localhost:8888
+      - name: connection
+        in: header
+        schema:
+          type: string
+          example: keep-alive
+      - name: sec-fetch-dest
+        in: header
+        schema:
+          type: string
+          example: empty
+      - name: sec-fetch-mode
+        in: header
+        schema:
+          type: string
+          example: cors
+      - name: sec-fetch-site
+        in: header
+        schema:
+          type: string
+          example: same-origin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                content:
+                  type: string
+                  example: test
+            example:
+              content: test
+      responses:
+        '200':
+          description: http://localhost:8888/community/api/v2/community/posts/8XEApUEbECDvsrnExVDiSR/comment
+          headers:
+            access-control-allow-headers:
+              schema:
+                type: string
+                example: Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token,
+                  Authorization
+            access-control-allow-methods:
+              schema:
+                type: string
+                example: POST, GET, OPTIONS, PUT, DELETE
+            access-control-allow-origin:
+              schema:
+                type: string
+                example: '*'
+            connection:
+              schema:
+                type: string
+                example: close
+            date:
+              schema:
+                type: string
+                example: Mon, 01 May 2023 15:04:41 GMT
+            server:
+              schema:
+                type: string
+                example: openresty/1.17.8.2
+            transfer-encoding:
+              schema:
+                type: string
+                example: chunked
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  CreatedAt:
+                    type: string
+                    example: 2023-05-01T15:04:33.915Z
+                  author:
+                    type: object
+                    properties:
+                      created_at:
+                        type: string
+                        example: 2023-05-01T15:04:33.915Z
+                      email:
+                        type: string
+                        example: userD@example.com
+                      nickname:
+                        type: string
+                        example: userD
+                      profile_pic_url:
+                        type: string
+                        example: ''
+                      vehicleid:
+                        type: string
+                        example: ''
+                  authorid:
+                    type: number
+                    example: 13
+                  comments:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        CreatedAt:
+                          type: string
+                          example: 2023-05-01T15:04:41.636018755Z
+                        author:
+                          type: object
+                          properties:
+                            created_at:
+                              type: string
+                              example: 2023-05-01T15:04:41.63601863Z
+                            email:
+                              type: string
+                              example: userD@example.com
+                            nickname:
+                              type: string
+                              example: userD
+                            profile_pic_url:
+                              type: string
+                              example: ''
+                            vehicleid:
+                              type: string
+                              example: ''
+                        content:
+                          type: string
+                          example: test
+                        id:
+                          type: string
+                          example: ''
+                    example:
+                    - CreatedAt: 2023-05-01T15:04:41.636018755Z
+                      author:
+                        created_at: 2023-05-01T15:04:41.63601863Z
+                        email: userD@example.com
+                        nickname: userD
+                        profile_pic_url: ''
+                        vehicleid: ''
+                      content: test
+                      id: ''
+                  content:
+                    type: string
+                    example: comment
+                  id:
+                    type: string
+                    example: 8XEApUEbECDvsrnExVDiSR
+                  title:
+                    type: string
+                    example: comment
+              examples:
+                http://localhost:8888/community/api/v2/community/posts/8XEApUEbECDvsrnExVDiSR/comment:
+                  value:
+                    CreatedAt: 2023-05-01T15:04:33.915Z
+                    author:
+                      created_at: 2023-05-01T15:04:33.915Z
+                      email: userD@example.com
+                      nickname: userD
+                      profile_pic_url: ''
+                      vehicleid: ''
+                    authorid: 13
+                    comments:
+                    - CreatedAt: 2023-05-01T15:04:41.636018755Z
+                      author:
+                        created_at: 2023-05-01T15:04:41.63601863Z
+                        email: userD@example.com
+                        nickname: userD
+                        profile_pic_url: ''
+                        vehicleid: ''
+                      content: test
+                      id: ''
+                    content: comment
+                    id: 8XEApUEbECDvsrnExVDiSR
+                    title: comment
+  /identity/api/v2/user/reset-password:
+    post:
+      tags:
+      - localhost
+      summary: /identity/api/v2/user/reset-password
+      description: /identity/api/v2/user/reset-password
+      operationId: identityApiV2UserResetPassword
+      parameters:
+      - name: host
+        in: header
+        schema:
+          type: string
+          example: localhost:8888
+      - name: user-agent
+        in: header
+        schema:
+          type: string
+          example: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101
+            Firefox/112.0
+      - name: accept-language
+        in: header
+        schema:
+          type: string
+          example: en-US,en;q=0.5
+      - name: accept-encoding
+        in: header
+        schema:
+          type: string
+          example: gzip, deflate, br
+      - name: referer
+        in: header
+        schema:
+          type: string
+          example: http://localhost:8888/reset-password
+      - name: content-length
+        in: header
+        schema:
+          type: string
+          example: '24'
+      - name: origin
+        in: header
+        schema:
+          type: string
+          example: http://localhost:8888
+      - name: connection
+        in: header
+        schema:
+          type: string
+          example: keep-alive
+      - name: sec-fetch-dest
+        in: header
+        schema:
+          type: string
+          example: empty
+      - name: sec-fetch-mode
+        in: header
+        schema:
+          type: string
+          example: cors
+      - name: sec-fetch-site
+        in: header
+        schema:
+          type: string
+          example: same-origin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                password:
+                  type: string
+                  example: Test@2023
+            example:
+              password: Test@2023
+      responses:
+        '200':
+          description: http://localhost:8888/identity/api/v2/user/reset-password
+          headers:
+            access-control-allow-origin:
+              schema:
+                type: string
+                example: '*'
+            cache-control:
+              schema:
+                type: string
+                example: no-cache, no-store, max-age=0, must-revalidate
+            connection:
+              schema:
+                type: string
+                example: close
+            date:
+              schema:
+                type: string
+                example: Mon, 01 May 2023 15:05:11 GMT
+            expires:
+              schema:
+                type: string
+                example: '0'
+            pragma:
+              schema:
+                type: string
+                example: no-cache
+            server:
+              schema:
+                type: string
+                example: openresty/1.17.8.2
+            transfer-encoding:
+              schema:
+                type: string
+                example: chunked
+            vary:
+              schema:
+                type: string
+                example: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+            x-content-type-options:
+              schema:
+                type: string
+                example: nosniff
+            x-frame-options:
+              schema:
+                type: string
+                example: DENY
+            x-xss-protection:
+              schema:
+                type: string
+                example: 1; mode=block
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Password reset successful.
+                  status:
+                    type: number
+                    example: 0
+              examples:
+                http://localhost:8888/identity/api/v2/user/reset-password:
+                  value:
+                    message: Password reset successful.
+                    status: 0
+tags:
+- name: localhost
+
 
